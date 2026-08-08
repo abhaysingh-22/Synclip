@@ -42,7 +42,7 @@ export function getRoom(roomId) {
 
 export function removeSocket(socketId) {
     for (const [roomId, room] of rooms.entries()) {
-        if (room.desktop === socketId || room.mobile === sockerId) {
+        if (room.desktop === socketId || room.mobile === socketId) {
             rooms.delete(roomId);
             console.log(`Room ${roomId} deleted`);
         }
