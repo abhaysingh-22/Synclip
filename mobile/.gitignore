@@ -1,0 +1,51 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native build artifacts
+/ios
+/android
+*.apk
+*.aab
+*.ipa
+
+# Native signing keys
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Metro
+.metro-health-check*
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+logs/
+
+# macOS
+.DS_Store
+
+# env / secrets
+.env
+.env.local
+.env.*
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
+
+# IDEs
+.vscode/
+.idea/
