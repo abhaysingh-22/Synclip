@@ -1,4 +1,4 @@
-const rooms = new Map();
+const rooms = new Map(); // roomId → { desktop, mobile }
 
 export function createRoom(socketId) {
     const roomId = generateRoomId();
@@ -15,36 +15,36 @@ export function joinRoom(roomId, socketId) {
     const room = rooms.get(roomId);
 
     if (!room) {
-        return {
-            success: false,
-            message: "Room not found",
-        };
+        return { success: false, message: "Room not found" };
     }
 
     if (room.mobile) {
-        return {
-            success: false,
-            message: "Room already has a mobile device",
-        };
+        return { success: false, message: "Room already has a mobile device" };
     }
 
     room.mobile = socketId;
 
-    return {
-        success: true,
-        room,
-    };
+    return { success: true, room };
 }
 
 export function getRoom(roomId) {
     return rooms.get(roomId);
 }
 
+export function getRoomBySocket(socketId) {
+    for (const [roomId, room] of rooms.entries()) {
+        if (room.desktop === socketId || room.mobile === socketId) {
+            return { roomId, room };
+        }
+    }
+    return null;
+}
+
 export function removeSocket(socketId) {
     for (const [roomId, room] of rooms.entries()) {
         if (room.desktop === socketId || room.mobile === socketId) {
             rooms.delete(roomId);
-            console.log(`Room ${roomId} deleted`);
+            console.log(`[RoomManager] Room ${roomId} deleted.`);
         }
     }
 }

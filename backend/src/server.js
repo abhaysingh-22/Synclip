@@ -3,7 +3,7 @@ import http from "http";
 import { Server } from "socket.io";
 import dotenv from "dotenv";
 import cors from "cors";
-import { createRoom, joinRoom, removeSocket } from "./roomManager.js";
+import { createRoom, joinRoom, removeSocket, getRoomBySocket } from "./roomManager.js";
 
 dotenv.config();
 
@@ -21,58 +21,83 @@ const io = new Server(server, {
 });
 
 app.get('/', (req, res) => {
-    res.send("SynClip backend is running!!");
-})
+    res.send("SynClip backend is running!");
+});
 
 io.on("connection", (socket) => {
-    console.log("Client Connected: ", socket.id);
+    console.log("[Server] Client connected:", socket.id);
 
-    //desktop creates a room
-    socket.on('create-room', () => {
+    // Desktop creates a room
+    socket.on("create-room", () => {
         const roomId = createRoom(socket.id);
 
         socket.join(roomId);
 
-        socket.emit("room-created", {
-            roomId,
-        });
+        socket.emit("room-created", { roomId });
 
-        console.log('Room created with id:', roomId);
+        console.log(`[Server] Room created: ${roomId} by desktop ${socket.id}`);
     });
 
-    //mobile joining room
+    // Mobile joins a room using the room code
     socket.on("join-room", ({ roomId }) => {
         const result = joinRoom(roomId, socket.id);
 
         if (!result.success) {
-            socket.emit("room-error", {
-                message: result.message,
-            });
-
+            socket.emit("room-error", { message: result.message });
+            console.warn(`[Server] Join failed for room ${roomId}: ${result.message}`);
             return;
         }
 
         socket.join(roomId);
 
-        socket.emit("room-joined", {
-            roomId,
-        });
+        socket.emit("room-joined", { roomId });
 
+        // Notify the desktop that mobile has arrived
         io.to(result.room.desktop).emit("device-connected");
 
-        console.log("Mobile joined room: ", roomId);
+        console.log(`[Server] Mobile ${socket.id} joined room ${roomId}`);
     });
 
-    //cli
+    // Forward clipboard update to the OTHER device in the room
+    socket.on("clipboard-update", (data) => {
+        const room = getRoomBySocket(socket.id);
+
+        if (!room) {
+            console.warn("[Server] clipboard-update from unknown socket, ignoring.");
+            return;
+        }
+
+        const { clipboardId, content, contentType, source } = data;
+
+        console.log(`[Server] Forwarding clipboard update (${clipboardId}) from ${source} in room ${room.roomId}`);
+
+        // Send only to the other device — not back to the sender
+        socket.to(room.roomId).emit("clipboard-update", {
+            clipboardId,
+            content,
+            contentType,
+            source,
+        });
+    });
+
+    // Handle disconnect — notify the partner and clean up room
     socket.on("disconnect", () => {
-        console.log("Client disconnected: ", socket.id);
+        console.log("[Server] Client disconnected:", socket.id);
+
+        const room = getRoomBySocket(socket.id);
+
+        if (room) {
+            // Notify the remaining partner
+            socket.to(room.roomId).emit("device-disconnected");
+            console.log(`[Server] Notified room ${room.roomId} of disconnect.`);
+        }
 
         removeSocket(socket.id);
     });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`[Server] SynClip backend running on port ${PORT}`);
 });
