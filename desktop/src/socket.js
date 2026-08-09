@@ -1,7 +1,11 @@
 import { io } from "socket.io-client";
 import { writeClipboard } from "./clipboard.js";
+import dotenv from "dotenv";
 
-const BACKEND_URL = "https://synclip-ytio.onrender.com";
+// Load environment variables
+dotenv.config();
+
+const BACKEND_URL = process.env.SERVER_URL || "http://localhost:5001";
 
 export const socket = io(BACKEND_URL, {
     autoConnect: false,
