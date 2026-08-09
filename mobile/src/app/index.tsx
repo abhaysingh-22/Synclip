@@ -50,9 +50,17 @@ export default function HomeScreen() {
 
   function startClipboardMonitor() {
     console.log("[Clipboard] Monitor started.");
-    listenerRef.current = Clipboard.addClipboardListener(({ content }) => {
-      sendIfNew(content ?? "");
-    });
+    
+    try {
+      // Wrap in try-catch in case native listener isn't supported by the current Expo Go client
+      listenerRef.current = Clipboard.addClipboardListener(({ content }) => {
+        sendIfNew(content ?? "");
+      });
+      console.log("[Clipboard] Event listener registered successfully.");
+    } catch (err) {
+      console.warn("[Clipboard] Event listener not supported on this device/version. Falling back to polling:", err);
+    }
+
     pollRef.current = setInterval(async () => {
       try {
         const current = await Clipboard.getStringAsync();
