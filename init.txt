@@ -1,0 +1,7 @@
+launchctl load ~/Library/LaunchAgents/com.synclip.desktop.plist
+
+
+launchctl unload ~/Library/LaunchAgents/com.synclip.desktop.plist
+
+
+adb reverse tcp:8081 tcp:8081
