@@ -11,15 +11,8 @@ export function setServerUrl(url: string) {
 function resolveServerUrl(): string {
   if (_serverUrl) return _serverUrl;
 
-  const hostUri = Constants.expoConfig?.hostUri;
-  if (hostUri) {
-    const host = hostUri.split(":")[0];
-    console.log("[Socket] Auto-detected host from Expo:", host);
-    return `http://${host}:5001`;
-  }
-
-  console.warn("[Socket] Could not resolve server URL, using fallback.");
-  return "http://localhost:5001";
+  console.log("[Socket] No QR scanned yet, falling back to production server.");
+  return "https://synclip-ytio.onrender.com";
 }
 
 let _socket: ReturnType<typeof io> | null = null;

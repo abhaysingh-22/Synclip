@@ -14,8 +14,7 @@ function getLocalIP() {
 }
 
 export async function generateQR(roomId) {
-    const localIP = getLocalIP();
-    const serverUrl = `http://${localIP}:5001`;
+    const serverUrl = "https://synclip-ytio.onrender.com";
 
     const qrData = JSON.stringify({
         room: roomId,

@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 import { writeClipboard } from "./clipboard.js";
 
-const BACKEND_URL = "http://localhost:5001";
+const BACKEND_URL = "https://synclip-ytio.onrender.com";
 
 export const socket = io(BACKEND_URL, {
     autoConnect: false,
