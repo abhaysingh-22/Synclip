@@ -30,9 +30,9 @@ export function connectToServer() {
     });
 }
 
-export function createRoom() {
+export function createRoom(roomId) {
     return new Promise((resolve, reject) => {
-        socket.emit("create-room");
+        socket.emit("create-room", { roomId });
 
         socket.once("room-created", (data) => {
             resolve(data.roomId);

@@ -9,7 +9,10 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  AppState,
+  AppStateStatus,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {
   connectToServer,
@@ -146,6 +149,51 @@ export default function HomeScreen() {
   };
 
 
+  // Load saved credentials & setup AppState listener
+  useEffect(() => {
+    async function loadSavedCredentials() {
+      try {
+        const savedRoom = await AsyncStorage.getItem("last_room_code");
+        const savedServer = await AsyncStorage.getItem("last_server_url");
+        if (savedRoom) {
+          console.log("[Storage] Found saved room:", savedRoom, "server:", savedServer);
+          setRoomCode(savedRoom);
+          if (savedServer) {
+            setServerUrl(savedServer);
+          }
+          // Auto-connect on startup
+          handleConnect(savedRoom, savedServer || undefined);
+        }
+      } catch (err) {
+        console.error("[Storage] Load error:", err);
+      }
+    }
+    loadSavedCredentials();
+
+    const handleAppStateChange = async (nextAppState: AppStateStatus) => {
+      console.log("[AppState] Transitioned to:", nextAppState);
+      if (nextAppState === "active") {
+        try {
+          const savedRoom = await AsyncStorage.getItem("last_room_code");
+          const savedServer = await AsyncStorage.getItem("last_server_url");
+          
+          if (savedRoom) {
+            console.log("[AppState] App active, auto-rejoining room:", savedRoom);
+            handleConnect(savedRoom, savedServer || undefined);
+          }
+        } catch (err) {
+          console.error("[AppState] Reconnect load error:", err);
+        }
+      }
+    };
+
+    const subscription = AppState.addEventListener("change", handleAppStateChange);
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   // Connect
   const handleConnect = async (code?: string, server?: string) => {
     const roomId = (code ?? roomCode).trim().toUpperCase();
@@ -162,10 +210,21 @@ export default function HomeScreen() {
     try {
       await connectToServer();
 
-      socket.once("room-joined", ({ roomId: joinedId }) => {
+      socket.once("room-joined", async ({ roomId: joinedId }) => {
         console.log("[Room] Joined:", joinedId);
         setStatus("connected");
         startClipboardMonitor();
+
+        // Persist room details for background/suspend re-connect
+        try {
+          await AsyncStorage.setItem("last_room_code", joinedId);
+          if (server) {
+            await AsyncStorage.setItem("last_server_url", server);
+          }
+        } catch (storageErr) {
+          console.error("[Storage] Save error:", storageErr);
+        }
+
         Alert.alert("Connected ✅", `Syncing with room ${joinedId}`);
       });
 

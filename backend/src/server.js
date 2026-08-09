@@ -28,14 +28,14 @@ io.on("connection", (socket) => {
     console.log("[Server] Client connected:", socket.id);
 
     // Desktop creates a room
-    socket.on("create-room", () => {
-        const roomId = createRoom(socket.id);
+    socket.on("create-room", ({ roomId } = {}) => {
+        const actualRoomId = createRoom(socket.id, roomId);
 
-        socket.join(roomId);
+        socket.join(actualRoomId);
 
-        socket.emit("room-created", { roomId });
+        socket.emit("room-created", { roomId: actualRoomId });
 
-        console.log(`[Server] Room created: ${roomId} by desktop ${socket.id}`);
+        console.log(`[Server] Room created: ${actualRoomId} by desktop ${socket.id}`);
     });
 
     // Mobile joins a room using the room code

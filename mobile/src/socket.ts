@@ -2,20 +2,36 @@ import Constants from "expo-constants";
 import { io, Socket } from "socket.io-client";
 
 let _serverUrl: string | null = null;
+let _socket: ReturnType<typeof io> | null = null;
 
 export function setServerUrl(url: string) {
-  _serverUrl = url;
-  console.log("[Socket] Server URL set from QR:", url);
+  if (_serverUrl !== url) {
+    _serverUrl = url;
+    console.log("[Socket] Server URL updated to:", url);
+    if (_socket) {
+      console.log("[Socket] Disconnecting old socket to connect to new URL...");
+      _socket.disconnect();
+      _socket = null; // Recreated on next getSocket()
+    }
+  }
 }
 
 function resolveServerUrl(): string {
   if (_serverUrl) return _serverUrl;
 
-  console.log("[Socket] No QR scanned yet, falling back to production server.");
+  // Auto-detect from Expo Metro bundler host (Expo Go dev only)
+  const hostUri = Constants.expoConfig?.hostUri;
+  if (hostUri) {
+    const host = hostUri.split(":")[0];
+    console.log("[Socket] Auto-detected host from Expo:", host);
+    return `http://${host}:5001`;
+  }
+
+  console.log("[Socket] No QR scanned and no Expo host found. Using default fallback.");
   return "https://synclip-ytio.onrender.com";
 }
 
-let _socket: ReturnType<typeof io> | null = null;
+
 
 export function getSocket() {
   if (!_socket) {

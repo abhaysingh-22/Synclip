@@ -2,6 +2,10 @@ import { connectToServer, createRoom } from "./socket.js";
 import { generateQR } from "./qr.js";
 import { startClipboardMonitor } from "./clipboard.js";
 import { socket } from "./socket.js";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 async function start() {
     try {
@@ -9,7 +13,9 @@ async function start() {
 
         await connectToServer();
 
-        const roomId = await createRoom();
+        // Read requested room ID from environment (falls back to ABHAY1)
+        const customRoomId = process.env.ROOM_ID || "ABHAY1";
+        const roomId = await createRoom(customRoomId);
 
         console.log("Room ID:", roomId);
 
