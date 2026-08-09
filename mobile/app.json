@@ -15,6 +15,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.abhaysingh22.synclip",
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       }
