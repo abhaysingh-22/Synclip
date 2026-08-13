@@ -9,7 +9,9 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "backgroundColor": "#ffffff"
+      "image": "./assets/images/splash-icon.png",
+      "backgroundColor": "#ffffff",
+      "resizeMode": "contain"
     },
     "ios": {
       "supportsTablet": true,
@@ -44,7 +46,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "433b7e78-af63-4d8c-90af-d3756c6b99ec"
+        "projectId": "b9cf5031-42e1-4a8b-a5f9-784f6ab9f4db"
       }
     }
   }
