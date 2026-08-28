@@ -1,0 +1,98 @@
+{
+  "backend/package.json": {
+    "mtime": 1786187174.3454523,
+    "seen": 1787952679.4830751,
+    "ast_hash": "4e4b6d748a83b2569d644e564af3964d",
+    "semantic_hash": "4e4b6d748a83b2569d644e564af3964d"
+  },
+  "backend/src/roomManager.js": {
+    "mtime": 1786296649.325816,
+    "seen": 1787952679.483078,
+    "ast_hash": "3ecb793b4512e9ae182e9e9c5a68b7d2",
+    "semantic_hash": "3ecb793b4512e9ae182e9e9c5a68b7d2"
+  },
+  "backend/src/server.js": {
+    "mtime": 1786296654.3616996,
+    "seen": 1787952679.483079,
+    "ast_hash": "d81dd2d41ea565876cadca6161f88b36",
+    "semantic_hash": "d81dd2d41ea565876cadca6161f88b36"
+  },
+  "desktop/package.json": {
+    "mtime": 1786296665.6644695,
+    "seen": 1787952679.48308,
+    "ast_hash": "eedbbcc21cf077cea0f704211e82cc59",
+    "semantic_hash": "eedbbcc21cf077cea0f704211e82cc59"
+  },
+  "desktop/src/clipboard.js": {
+    "mtime": 1786219884.5584266,
+    "seen": 1787952679.4830809,
+    "ast_hash": "003f309e1f70f7bfba576a2292767f55",
+    "semantic_hash": "003f309e1f70f7bfba576a2292767f55"
+  },
+  "desktop/src/index.js": {
+    "mtime": 1786296674.5067601,
+    "seen": 1787952679.4830809,
+    "ast_hash": "9bfd2fee6a56e38e89059fc3d133a41b",
+    "semantic_hash": "9bfd2fee6a56e38e89059fc3d133a41b"
+  },
+  "desktop/src/qr.js": {
+    "mtime": 1786263487.1321537,
+    "seen": 1787952679.483082,
+    "ast_hash": "2fabdb4b28e157372e3639bb6e90e985",
+    "semantic_hash": "2fabdb4b28e157372e3639bb6e90e985"
+  },
+  "desktop/src/socket.js": {
+    "mtime": 1786297800.114551,
+    "seen": 1787952679.483083,
+    "ast_hash": "436f9394db711173d16591ec31834c8c",
+    "semantic_hash": "436f9394db711173d16591ec31834c8c"
+  },
+  "mobile/app.json": {
+    "mtime": 1786644328.011068,
+    "seen": 1787952679.483083,
+    "ast_hash": "8cc20df6203fd5b1c73759ca8d50060b",
+    "semantic_hash": "8cc20df6203fd5b1c73759ca8d50060b"
+  },
+  "mobile/babel.config.js": {
+    "mtime": 1786191908.392455,
+    "seen": 1787952679.483084,
+    "ast_hash": "39626410bf17113d7391598a3d40b764",
+    "semantic_hash": "39626410bf17113d7391598a3d40b764"
+  },
+  "mobile/eas.json": {
+    "mtime": 1786263716.1520338,
+    "seen": 1787952679.483084,
+    "ast_hash": "5b8776f030b179bc61f3f7ab2bf09842",
+    "semantic_hash": "5b8776f030b179bc61f3f7ab2bf09842"
+  },
+  "mobile/package.json": {
+    "mtime": 1786382485.2155483,
+    "seen": 1787952679.4830852,
+    "ast_hash": "75d3e7cec97a23e00f605931b0d2d695",
+    "semantic_hash": "75d3e7cec97a23e00f605931b0d2d695"
+  },
+  "mobile/src/app/_layout.tsx": {
+    "mtime": 1786191917.287027,
+    "seen": 1787952679.483086,
+    "ast_hash": "46920377bccb34fa27adbed81c17ba57",
+    "semantic_hash": "46920377bccb34fa27adbed81c17ba57"
+  },
+  "mobile/src/app/index.tsx": {
+    "mtime": 1786298092.7273037,
+    "seen": 1787952679.483086,
+    "ast_hash": "ba09c84f011896f86b83f5088e5f24d2",
+    "semantic_hash": "ba09c84f011896f86b83f5088e5f24d2"
+  },
+  "mobile/src/socket.ts": {
+    "mtime": 1786296721.9456577,
+    "seen": 1787952679.483087,
+    "ast_hash": "92ddb83a867a36719fbae015d323e3df",
+    "semantic_hash": "92ddb83a867a36719fbae015d323e3df"
+  },
+  "mobile/tsconfig.json": {
+    "mtime": 1786191901.5643308,
+    "seen": 1787952679.483087,
+    "ast_hash": "014a157649353c7274289c778b5920cb",
+    "semantic_hash": "014a157649353c7274289c778b5920cb"
+  }
+}

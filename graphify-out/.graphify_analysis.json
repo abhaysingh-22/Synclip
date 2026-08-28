@@ -1,0 +1,390 @@
+{
+  "communities": {
+    "0": [
+      "expo",
+      "expo_camera",
+      "expo_clipboard",
+      "expo_constants",
+      "expo_font",
+      "expo_linking",
+      "expo_splash_screen",
+      "expo_status_bar",
+      "expo_system_ui",
+      "mobile_package_dependencies",
+      "mobile_package_dependencies_expo",
+      "mobile_package_dependencies_expo_camera",
+      "mobile_package_dependencies_expo_clipboard",
+      "mobile_package_dependencies_expo_constants",
+      "mobile_package_dependencies_expo_font",
+      "mobile_package_dependencies_expo_linking",
+      "mobile_package_dependencies_expo_splash_screen",
+      "mobile_package_dependencies_expo_status_bar",
+      "mobile_package_dependencies_expo_system_ui",
+      "mobile_package_dependencies_react",
+      "mobile_package_dependencies_react_dom",
+      "mobile_package_dependencies_react_native",
+      "mobile_package_dependencies_react_native_async_storage_async_storage",
+      "mobile_package_dependencies_react_native_gesture_handler",
+      "mobile_package_dependencies_react_native_reanimated",
+      "mobile_package_dependencies_react_native_safe_area_context",
+      "mobile_package_dependencies_react_native_screens",
+      "mobile_package_dependencies_react_native_web",
+      "mobile_package_dependencies_react_native_worklets",
+      "react",
+      "react_dom",
+      "react_native",
+      "react_native_async_storage_async_storage",
+      "react_native_gesture_handler",
+      "react_native_reanimated",
+      "react_native_safe_area_context",
+      "react_native_screens",
+      "react_native_web",
+      "react_native_worklets"
+    ],
+    "1": [
+      "mobile_app",
+      "mobile_app_eas_projectid",
+      "mobile_app_experiments_typedroutes",
+      "mobile_app_expo",
+      "mobile_app_expo_experiments",
+      "mobile_app_expo_extra",
+      "mobile_app_expo_icon",
+      "mobile_app_expo_ios",
+      "mobile_app_expo_name",
+      "mobile_app_expo_newarchenabled",
+      "mobile_app_expo_orientation",
+      "mobile_app_expo_scheme",
+      "mobile_app_expo_slug",
+      "mobile_app_expo_splash",
+      "mobile_app_expo_userinterfacestyle",
+      "mobile_app_expo_version",
+      "mobile_app_expo_web",
+      "mobile_app_extra_eas",
+      "mobile_app_extra_router",
+      "mobile_app_ios_bundleidentifier",
+      "mobile_app_ios_supportstablet",
+      "mobile_app_splash_backgroundcolor",
+      "mobile_app_splash_image",
+      "mobile_app_splash_resizemode",
+      "mobile_app_web_bundler",
+      "mobile_app_web_output"
+    ],
+    "2": [
+      "backend_package_dependencies",
+      "backend_package_dependencies_cors",
+      "backend_package_dependencies_dotenv",
+      "backend_package_dependencies_express",
+      "backend_package_dependencies_nanoid",
+      "backend_package_dependencies_socket_io",
+      "backend_package_dependencies_socket_io_client",
+      "backend_package_json_dotenv",
+      "backend_package_json_express",
+      "backend_package_json_nanoid",
+      "clipboardy",
+      "cors",
+      "desktop_package_dependencies",
+      "desktop_package_dependencies_clipboardy",
+      "desktop_package_dependencies_dotenv",
+      "desktop_package_dependencies_express",
+      "desktop_package_dependencies_nanoid",
+      "desktop_package_dependencies_qrcode",
+      "desktop_package_dependencies_socket_io_client",
+      "desktop_package_json_express",
+      "desktop_package_json_nanoid",
+      "mobile_package_dependencies_socket_io_client",
+      "mobile_package_json_socket_io_client",
+      "qrcode",
+      "socket_io"
+    ],
+    "3": [
+      "babel_core",
+      "mobile_package",
+      "mobile_package_devdependencies",
+      "mobile_package_devdependencies_babel_core",
+      "mobile_package_devdependencies_types_react",
+      "mobile_package_devdependencies_typescript",
+      "mobile_package_main",
+      "mobile_package_name",
+      "mobile_package_private",
+      "mobile_package_scripts",
+      "mobile_package_scripts_android",
+      "mobile_package_scripts_ios",
+      "mobile_package_scripts_start",
+      "mobile_package_scripts_web",
+      "mobile_package_version",
+      "types_react",
+      "typescript"
+    ],
+    "4": [
+      "mobile_src_app_index",
+      "mobile_src_app_index_homescreen",
+      "mobile_src_app_index_homescreen_loadsavedcredentials",
+      "mobile_src_app_index_homescreen_sendifnew",
+      "mobile_src_app_index_homescreen_startclipboardmonitor",
+      "mobile_src_app_index_homescreen_stopclipboardmonitor",
+      "mobile_src_app_index_status",
+      "mobile_src_app_index_styles",
+      "mobile_src_socket",
+      "mobile_src_socket_connecttoserver",
+      "mobile_src_socket_emitclipboardupdate",
+      "mobile_src_socket_getsocket",
+      "mobile_src_socket_joinroom",
+      "mobile_src_socket_resolveserverurl",
+      "mobile_src_socket_setserverurl",
+      "mobile_src_socket_socket"
+    ],
+    "5": [
+      "backend_package",
+      "backend_package_author",
+      "backend_package_description",
+      "backend_package_devdependencies",
+      "backend_package_devdependencies_nodemon",
+      "backend_package_keywords",
+      "backend_package_license",
+      "backend_package_main",
+      "backend_package_name",
+      "backend_package_scripts",
+      "backend_package_scripts_dev",
+      "backend_package_scripts_start",
+      "backend_package_type",
+      "backend_package_version",
+      "nodemon"
+    ],
+    "6": [
+      "desktop_src_clipboard",
+      "desktop_src_clipboard_startclipboardmonitor",
+      "desktop_src_clipboard_stopclipboardmonitor",
+      "desktop_src_clipboard_writeclipboard",
+      "desktop_src_index",
+      "desktop_src_index_start",
+      "desktop_src_qr",
+      "desktop_src_qr_generateqr",
+      "desktop_src_qr_getlocalip",
+      "desktop_src_socket",
+      "desktop_src_socket_connecttoserver",
+      "desktop_src_socket_createroom",
+      "desktop_src_socket_socket"
+    ],
+    "7": [
+      "backend_src_roommanager",
+      "backend_src_roommanager_createroom",
+      "backend_src_roommanager_generateroomid",
+      "backend_src_roommanager_getroom",
+      "backend_src_roommanager_getroombysocket",
+      "backend_src_roommanager_joinroom",
+      "backend_src_roommanager_removesocket",
+      "backend_src_roommanager_rooms",
+      "backend_src_server",
+      "backend_src_server_app",
+      "backend_src_server_io",
+      "backend_src_server_server"
+    ],
+    "8": [
+      "desktop_package",
+      "desktop_package_author",
+      "desktop_package_description",
+      "desktop_package_keywords",
+      "desktop_package_license",
+      "desktop_package_main",
+      "desktop_package_name",
+      "desktop_package_scripts",
+      "desktop_package_scripts_start",
+      "desktop_package_scripts_test",
+      "desktop_package_type",
+      "desktop_package_version"
+    ],
+    "9": [
+      "mobile_tsconfig",
+      "mobile_tsconfig_compileroptions",
+      "mobile_tsconfig_compileroptions_paths",
+      "mobile_tsconfig_compileroptions_strict",
+      "mobile_tsconfig_extends",
+      "mobile_tsconfig_include",
+      "ref_expo_env_d_ts",
+      "ref_expo_tsconfig_base",
+      "ref_expo_types_ts",
+      "ref_ts",
+      "ref_tsx"
+    ],
+    "10": [
+      "mobile_app_adaptiveicon_backgroundcolor",
+      "mobile_app_android_adaptiveicon",
+      "mobile_app_android_package",
+      "mobile_app_android_permissions",
+      "mobile_app_expo_android",
+      "ref_android_permission_camera",
+      "ref_android_permission_record_audio"
+    ],
+    "11": [
+      "expo_router",
+      "mobile_app_expo_plugins",
+      "mobile_package_dependencies_expo_router",
+      "mobile_src_app_layout",
+      "mobile_src_app_layout_rootlayout"
+    ],
+    "12": [
+      "mobile_babel_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.05128205128205128,
+    "1": 0.07692307692307693,
+    "2": 0.08333333333333333,
+    "3": 0.11764705882352941,
+    "4": 0.25,
+    "5": 0.13333333333333333,
+    "6": 0.3076923076923077,
+    "7": 0.24242424242424243,
+    "8": 0.16666666666666666,
+    "9": 0.18181818181818182,
+    "10": 0.2857142857142857,
+    "11": 0.4,
+    "12": 1.0
+  },
+  "gods": [
+    {
+      "id": "mobile_app_expo",
+      "label": "expo",
+      "degree": 16
+    },
+    {
+      "id": "mobile_src_app_index_homescreen",
+      "label": "HomeScreen()",
+      "degree": 8
+    },
+    {
+      "id": "mobile_src_socket_getsocket",
+      "label": "getSocket()",
+      "degree": 5
+    },
+    {
+      "id": "desktop_src_index_start",
+      "label": "start()",
+      "degree": 5
+    },
+    {
+      "id": "mobile_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "mobile_tsconfig_include",
+      "label": "include",
+      "degree": 5
+    },
+    {
+      "id": "mobile_src_socket_connecttoserver",
+      "label": "connectToServer()",
+      "degree": 4
+    },
+    {
+      "id": "mobile_src_socket_emitclipboardupdate",
+      "label": "emitClipboardUpdate()",
+      "degree": 4
+    },
+    {
+      "id": "mobile_src_socket_joinroom",
+      "label": "joinRoom()",
+      "degree": 4
+    },
+    {
+      "id": "mobile_src_socket_setserverurl",
+      "label": "setServerUrl()",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "HomeScreen()",
+      "target": "connectToServer()",
+      "source_files": [
+        "mobile/src/app/index.tsx",
+        "mobile/src/socket.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "HomeScreen()",
+      "target": "joinRoom()",
+      "source_files": [
+        "mobile/src/app/index.tsx",
+        "mobile/src/socket.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "HomeScreen()",
+      "target": "setServerUrl()",
+      "source_files": [
+        "mobile/src/app/index.tsx",
+        "mobile/src/socket.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "loadSavedCredentials()",
+      "target": "setServerUrl()",
+      "source_files": [
+        "mobile/src/app/index.tsx",
+        "mobile/src/socket.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "sendIfNew()",
+      "target": "emitClipboardUpdate()",
+      "source_files": [
+        "mobile/src/app/index.tsx",
+        "mobile/src/socket.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `dependencies` to `expo-router`, `dependencies`, `mobile/package.json`?",
+      "why": "High betweenness centrality (0.423) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `socket.io-client` connect `dependencies` to `dependencies`?",
+      "why": "High betweenness centrality (0.246) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Status`, `expo`, `expo-camera` to the rest of the system?",
+      "why": "95 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `dependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `expo` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `dependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `mobile/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
