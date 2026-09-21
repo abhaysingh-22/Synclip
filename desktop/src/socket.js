@@ -13,6 +13,8 @@ export const socket = io(BACKEND_URL, {
     reconnectionDelay: 2000,
 });
 
+let currentRoomId = process.env.ROOM_ID || "ABHAY1";
+
 export function connectToServer() {
     return new Promise((resolve, reject) => {
         if (socket.connected) {
@@ -35,6 +37,7 @@ export function connectToServer() {
 }
 
 export function createRoom(roomId) {
+    currentRoomId = roomId;
     return new Promise((resolve, reject) => {
         socket.emit("create-room", { roomId });
 
@@ -47,6 +50,14 @@ export function createRoom(roomId) {
         });
     });
 }
+
+// Automatically re-register room on reconnect
+socket.on("connect", () => {
+    if (currentRoomId) {
+        console.log(`[Socket] Re-registering room ${currentRoomId} on server after connect/reconnect.`);
+        socket.emit("create-room", { roomId: currentRoomId });
+    }
+});
 
 // Listen for clipboard updates coming from the mobile device
 socket.on("clipboard-update", ({ clipboardId, content, source }) => {

@@ -18,6 +18,8 @@ const io = new Server(server, {
     cors: {
         origin: '*',
     },
+    pingInterval: 10000,
+    pingTimeout: 5000,
 });
 
 app.get('/', (req, res) => {

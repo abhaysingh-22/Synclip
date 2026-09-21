@@ -25,10 +25,7 @@ export function joinRoom(roomId, socketId) {
         return { success: false, message: "Room not found" };
     }
 
-    if (room.mobile && room.mobile !== socketId) {
-        return { success: false, message: "Room already has a mobile device" };
-    }
-
+    // Allow new mobile connection to take over (resolves zombie sockets / mobile reconnects)
     room.mobile = socketId;
 
     return { success: true, room };

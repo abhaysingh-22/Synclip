@@ -23,8 +23,8 @@ async function start() {
 
         console.log("Waiting for mobile device to join...");
 
-        // Once mobile joins, begin monitoring clipboard
-        socket.once("device-connected", () => {
+        // Once mobile joins (or rejoins after disconnect), begin monitoring clipboard
+        socket.on("device-connected", () => {
             console.log("[Main] Mobile connected. Starting clipboard sync.");
             startClipboardMonitor();
         });
